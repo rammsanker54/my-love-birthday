@@ -1,0 +1,2361 @@
+
+:root {
+  --bg: #090508;
+  --bg-soft: #12080d;
+  --rose: #d98ca5;
+  --rose-light: #f4c5d2;
+  --gold: #d9b77a;
+  --cream: #fff5ed;
+  --muted: #bba9ae;
+}
+
+.app {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(217, 140, 165, 0.1),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(217, 183, 122, 0.08),
+      transparent 35%
+    ),
+    var(--bg);
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.floating-heart {
+  position: absolute;
+  color: rgba(244, 197, 210, 0.25);
+}
+
+/* =========================
+   OPENING SCREEN
+========================= */
+
+.opening-screen {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(100, 30, 55, 0.35),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #080407 0%,
+      #150910 50%,
+      #080407 100%
+    );
+}
+
+.opening-content {
+  position: relative;
+  z-index: 3;
+
+  width: 100%;
+  max-width: 850px;
+
+  text-align: center;
+}
+
+.tiny-label {
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 500;
+  margin-bottom: 35px;
+}
+
+.hero-heart {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 30px;
+
+  color: var(--rose-light);
+
+  filter:
+    drop-shadow(0 0 15px rgba(244, 197, 210, 0.5))
+    drop-shadow(0 0 40px rgba(217, 140, 165, 0.25));
+}
+
+.hero-heart svg {
+  width: 65px;
+  height: 65px;
+}
+
+.opening-content h1 {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 9vw, 110px);
+  line-height: 0.9;
+
+  font-weight: 500;
+
+  color: var(--cream);
+}
+
+.opening-content h1 span {
+  display: block;
+
+  color: var(--rose-light);
+
+  font-style: italic;
+  font-weight: 400;
+}
+
+.opening-content p {
+  margin-top: 35px;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.enter-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 42px;
+
+  border: 1px solid rgba(244, 197, 210, 0.35);
+  border-radius: 100px;
+
+  padding: 15px 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(217, 140, 165, 0.2),
+      rgba(217, 183, 122, 0.08)
+    );
+
+  color: var(--cream);
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.enter-button:hover {
+  border-color: var(--rose-light);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(217, 140, 165, 0.35),
+      rgba(217, 183, 122, 0.15)
+    );
+
+  box-shadow:
+    0 0 30px rgba(217, 140, 165, 0.15);
+}
+
+.scroll-hint {
+  margin-top: 60px;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.glow {
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.glow-one {
+  top: -150px;
+  left: -100px;
+
+  background: rgba(217, 140, 165, 0.12);
+}
+
+.glow-two {
+  right: -100px;
+  bottom: -150px;
+
+  background: rgba(217, 183, 122, 0.08);
+}
+
+/* =========================
+   STORY HERO
+========================= */
+
+.story-page {
+  position: relative;
+  z-index: 2;
+}
+
+.story-hero {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 25px;
+
+  background:
+    linear-gradient(
+      rgba(9, 5, 8, 0.65),
+      rgba(9, 5, 8, 0.92)
+    ),
+    radial-gradient(
+      circle at center,
+      #431d2d,
+      #090508 65%
+    );
+}
+
+.story-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 0%,
+      rgba(0, 0, 0, 0.45) 80%
+    );
+}
+
+.story-content {
+  position: relative;
+
+  width: 100%;
+  max-width: 850px;
+
+  text-align: center;
+}
+
+.story-content > span {
+  color: var(--gold);
+
+  font-size: 10px;
+
+  letter-spacing: 5px;
+}
+
+.story-content h2 {
+  margin-top: 25px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(55px, 9vw, 110px);
+
+  line-height: 0.85;
+
+  font-weight: 400;
+}
+
+.story-content h2 strong {
+  color: var(--rose-light);
+
+  font-style: italic;
+  font-weight: 500;
+}
+
+.story-content p {
+  margin-top: 35px;
+
+  color: var(--muted);
+
+  line-height: 1.9;
+}
+
+.story-heart {
+  margin: 45px auto 0;
+
+  color: var(--rose-light);
+
+  width: 35px;
+}
+
+/* =========================
+   LOVE LETTER
+========================= */
+
+.love-letter {
+  padding: 140px 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #090508,
+      #12080d,
+      #090508
+    );
+}
+
+.section-inner {
+  width: 100%;
+  max-width: 750px;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.section-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--gold);
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+}
+
+.section-inner h2 {
+  margin-top: 25px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(50px, 8vw, 80px);
+
+  font-weight: 500;
+
+  color: var(--cream);
+}
+
+.letter-card {
+  position: relative;
+
+  margin-top: 55px;
+
+  padding: 55px 45px;
+
+  text-align: left;
+
+  border:
+    1px solid rgba(217, 140, 165, 0.18);
+
+  border-radius: 4px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.035),
+      rgba(217, 140, 165, 0.025)
+    );
+
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.35);
+}
+
+.letter-card::before {
+  content: "“";
+
+  position: absolute;
+
+  top: 10px;
+  left: 25px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 90px;
+
+  color: rgba(217, 140, 165, 0.12);
+}
+
+.letter-card p {
+  color: #d8cbd0;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
+
+  line-height: 1.7;
+
+  margin-bottom: 25px;
+}
+
+.letter-card .signature {
+  margin-top: 45px;
+  margin-bottom: 0;
+
+  color: var(--rose-light);
+
+  font-style: italic;
+}
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+.birthday-section {
+  min-height: 65vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 80px 20px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(217, 140, 165, 0.12),
+      transparent 45%
+    );
+}
+
+.gift-container {
+  text-align: center;
+}
+
+.gift-container svg {
+  color: var(--gold);
+
+  filter:
+    drop-shadow(0 0 20px rgba(217, 183, 122, 0.3));
+}
+
+.gift-container h2 {
+  margin-top: 25px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 55px;
+
+  font-weight: 500;
+}
+
+.gift-container p {
+  margin-top: 15px;
+
+  color: var(--muted);
+}
+/* ================================
+   MEMORIES SECTION
+================================ */
+
+.memories-section {
+  position: relative;
+  padding: 120px 24px;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(217, 140, 165, 0.12),
+      transparent 35%
+    ),
+    #0f080d;
+  overflow: hidden;
+}
+
+.memories-section::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: rgba(217, 183, 122, 0.05);
+  filter: blur(80px);
+  top: 10%;
+  right: -150px;
+  pointer-events: none;
+}
+
+.memories-section .section-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.memories-section h2 {
+  margin-top: 20px;
+  margin-bottom: 55px;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 500;
+  color: var(--cream);
+}
+
+/* Grid */
+
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* Individual image */
+
+.memory-item {
+  position: relative;
+  width: 100%;
+  height: clamp(260px, 38vw, 480px);
+  overflow: hidden;
+  border-radius: 24px;
+  background: #160b10;
+  border: 1px solid rgba(244, 197, 210, 0.15);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35),
+    0 0 0 rgba(217, 140, 165, 0);
+  cursor: pointer;
+  transition:
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.memory-item:hover {
+  border-color: rgba(244, 197, 210, 0.4);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(217, 140, 165, 0.12);
+}
+
+.memory-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.8s ease;
+}
+
+.memory-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.75);
+}
+
+/* Heart overlay */
+
+.memory-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+
+  color: var(--rose-light);
+
+  background: rgba(10, 4, 8, 0.2);
+
+  transition:
+    opacity 0.4s ease,
+    background 0.4s ease;
+
+  pointer-events: none;
+}
+
+/* =========================================
+   ENGAGEMENT / SPECIAL DAY
+========================================= */
+
+.engagement-section {
+  position: relative;
+  padding: 140px 24px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(217, 140, 165, 0.14),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(217, 183, 122, 0.09),
+      transparent 30%
+    ),
+    #090508;
+}
+
+.engagement-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.engagement-section .section-label {
+  justify-content: center;
+}
+
+.engagement-section h2 {
+  margin-top: 22px;
+  text-align: center;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  font-weight: 500;
+
+  color: var(--cream);
+}
+
+.engagement-section h2 span {
+  display: block;
+  color: var(--rose-light);
+  font-style: italic;
+}
+
+.engagement-intro {
+  max-width: 620px;
+  margin: 28px auto 80px;
+
+  text-align: center;
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Background glow */
+
+.engagement-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+}
+
+.engagement-glow-one {
+  width: 350px;
+  height: 350px;
+  left: -180px;
+  top: 20%;
+  background: rgba(217, 140, 165, 0.08);
+}
+
+.engagement-glow-two {
+  width: 300px;
+  height: 300px;
+  right: -150px;
+  bottom: 10%;
+  background: rgba(217, 183, 122, 0.07);
+}
+
+/* Main content */
+
+.engagement-content {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Photo */
+
+.engagement-photo {
+  position: relative;
+}
+
+.photo-frame {
+  position: relative;
+  width: 100%;
+  height: clamp(400px, 48vw, 620px);
+
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  border: 1px solid rgba(244, 197, 210, 0.25);
+
+  box-shadow:
+    20px 25px 80px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(217, 140, 165, 0.08);
+}
+
+.photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+
+  border: 1px solid rgba(255, 245, 237, 0.25);
+
+  z-index: 3;
+  pointer-events: none;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 1s ease,
+    filter 1s ease;
+}
+
+.engagement-photo:hover .photo-frame img {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+
+/* Moving shine */
+
+.photo-shine {
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 70%
+  );
+
+  transform: translateX(-120%);
+
+  transition: transform 1.2s ease;
+
+  pointer-events: none;
+}
+
+.engagement-photo:hover .photo-shine {
+  transform: translateX(120%);
+}
+
+/* Heart */
+
+.engagement-heart {
+  position: absolute;
+
+  z-index: 4;
+
+  right: 25px;
+  bottom: 25px;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--rose-light);
+
+  background: rgba(9, 5, 8, 0.75);
+
+  border: 1px solid rgba(244, 197, 210, 0.35);
+
+  border-radius: 50%;
+
+  backdrop-filter: blur(10px);
+
+  animation: engagementHeart 2s ease-in-out infinite;
+}
+
+@keyframes engagementHeart {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Story */
+
+.engagement-story {
+  padding: 20px 0;
+}
+
+.engagement-date {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  margin-bottom: 45px;
+}
+
+.date-line {
+  width: 45px;
+  height: 1px;
+
+  background: var(--gold);
+}
+
+.engagement-date div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.engagement-date small {
+  color: var(--gold);
+
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.engagement-date strong {
+  color: var(--cream);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.engagement-story h3 {
+  margin-bottom: 28px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 5vw, 4.8rem);
+  line-height: 0.9;
+  font-weight: 500;
+
+  color: var(--cream);
+}
+
+.engagement-story h3 em {
+  color: var(--rose-light);
+  font-weight: 400;
+}
+
+.engagement-story > p {
+  max-width: 480px;
+
+  margin-bottom: 18px;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Quote */
+
+.engagement-quote {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 40px;
+  padding: 24px;
+
+  color: var(--rose-light);
+
+  border-left: 1px solid var(--rose);
+  border-right: 1px solid rgba(217, 140, 165, 0.2);
+
+  background: rgba(217, 140, 165, 0.04);
+}
+
+.engagement-quote span {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  line-height: 1.3;
+  font-style: italic;
+}
+
+/* Promise */
+/* =========================================
+   OUR OUTINGS
+========================================= */
+
+.outings-section {
+  position: relative;
+  padding: 140px 24px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #090508 0%,
+      #12080d 50%,
+      #090508 100%
+    );
+
+  overflow: hidden;
+}
+
+.outings-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.outings-section .section-label {
+  justify-content: center;
+}
+
+.outings-section h2 {
+  margin-top: 22px;
+
+  text-align: center;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95;
+  font-weight: 500;
+
+  color: var(--cream);
+}
+
+.outings-section h2 span {
+  display: block;
+
+  color: var(--rose-light);
+  font-style: italic;
+}
+
+.outings-intro {
+  max-width: 600px;
+
+  margin: 28px auto 75px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+/* Grid */
+
+.outings-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  grid-auto-rows: 300px;
+
+  gap: 22px;
+}
+
+/* Cards */
+
+.outing-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #160b10;
+
+  border: 1px solid
+    rgba(244, 197, 210, 0.14);
+
+  cursor: pointer;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.35);
+
+  transition:
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.outing-card:hover {
+  border-color:
+    rgba(244, 197, 210, 0.4);
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.55);
+}
+
+/* Horizontal */
+
+.outing-wide {
+  grid-column: span 2;
+}
+
+/* Tall */
+
+.outing-tall {
+  grid-row: span 2;
+}
+
+/* Image */
+
+.outing-card img {
+  width: 100%;
+  height: 80%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 1s
+      cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.8s ease;
+}
+
+.outing-card:hover img {
+  transform: scale(1.08);
+
+  filter: brightness(0.68);
+}
+
+/* Overlay */
+
+.outing-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+
+  padding: 28px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 2, 4, 0.9),
+      rgba(5, 2, 4, 0.1) 65%,
+      transparent
+    );
+
+  opacity: 0.95;
+
+  transition:
+    background 0.5s ease;
+}
+
+.outing-card:hover .outing-overlay {
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 2, 4, 0.95),
+      rgba(5, 2, 4, 0.25) 70%,
+      transparent
+    );
+}
+
+.outing-overlay div {
+  transform: translateY(8px);
+
+  transition:
+    transform 0.5s ease;
+}
+
+.outing-card:hover
+  .outing-overlay div {
+  transform: translateY(0);
+}
+
+.outing-overlay span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--gold);
+
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.outing-overlay h3 {
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 28px;
+
+  font-weight: 500;
+
+  color: var(--cream);
+}
+
+.outing-overlay svg {
+  flex-shrink: 0;
+
+  color: var(--rose-light);
+
+  filter:
+    drop-shadow(
+      0 0 12px
+      rgba(244, 197, 210, 0.6)
+    );
+
+  animation:
+    outingHeart 2s ease-in-out infinite;
+}
+
+@keyframes outingHeart {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+/* =========================================
+   MARRIAGE / WEDDING SECTION
+========================================= */
+
+.marriage-section {
+  position: relative;
+  padding: 150px 24px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(217, 183, 122, 0.11),
+      transparent 32%
+    ),
+    linear-gradient(
+      180deg,
+      #090508,
+      #10070c,
+      #090508
+    );
+}
+
+.marriage-inner {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Background glow */
+
+.marriage-bg-glow {
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  pointer-events: none;
+}
+
+.marriage-glow-one {
+  top: 15%;
+  left: -250px;
+
+  background:
+    rgba(217, 140, 165, 0.08);
+}
+
+.marriage-glow-two {
+  right: -250px;
+  bottom: 10%;
+
+  background:
+    rgba(217, 183, 122, 0.07);
+}
+
+/* Heading */
+
+.marriage-label {
+  justify-content: center;
+}
+
+.marriage-section h2 {
+  margin-top: 22px;
+
+  text-align: center;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(3rem, 7vw, 5.8rem);
+
+  line-height: 0.95;
+
+  font-weight: 500;
+
+  color: var(--cream);
+}
+
+.marriage-section h2 span {
+  display: block;
+
+  color: var(--rose-light);
+
+  font-style: italic;
+}
+
+.marriage-intro {
+  max-width: 650px;
+
+  margin: 30px auto 75px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+/* =========================================
+   MAIN WEDDING PHOTO
+========================================= */
+
+.wedding-hero-photo {
+  width: 100%;
+}
+
+.wedding-photo-frame {
+  position: relative;
+
+  width: 100%;
+
+  height:
+    clamp(420px, 60vw, 680px);
+
+  overflow: hidden;
+
+  border-radius: 4px;
+
+  border:
+    1px solid
+    rgba(244, 197, 210, 0.25);
+
+  box-shadow:
+    0 35px 100px
+    rgba(0, 0, 0, 0.55);
+}
+
+.wedding-photo-frame::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 15px;
+
+  z-index: 4;
+
+  border:
+    1px solid
+    rgba(255, 245, 237, 0.28);
+
+  pointer-events: none;
+}
+
+.wedding-photo-frame img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 1.5s
+    cubic-bezier(
+      0.2,
+      0.8,
+      0.2,
+      1
+    );
+}
+
+.wedding-photo-frame:hover img {
+  transform: scale(1.04);
+}
+
+/* Overlay */
+
+.wedding-photo-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 2, 4, 0.85),
+      rgba(5, 2, 4, 0.15) 60%,
+      transparent
+    );
+}
+
+/* Photo text */
+
+.wedding-photo-text {
+  position: absolute;
+
+  z-index: 5;
+
+  left: 50%;
+  bottom: 65px;
+
+  transform: translateX(-50%);
+
+  width: 100%;
+
+  text-align: center;
+
+  color: white;
+}
+
+.wedding-photo-text span {
+  display: block;
+
+  margin-bottom: 14px;
+
+  color: var(--gold);
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+}
+
+.wedding-photo-text h3 {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(3rem, 7vw, 6rem);
+
+  font-weight: 400;
+
+  line-height: 0.9;
+}
+
+.wedding-photo-text h3 em {
+  margin: 0 12px;
+
+  color: var(--rose-light);
+
+  font-size: 0.6em;
+
+  font-style: italic;
+}
+
+.wedding-small-heart {
+  margin-top: 25px;
+
+  color: var(--rose-light);
+
+  animation:
+    weddingHeart 2s ease-in-out infinite;
+}
+
+@keyframes weddingHeart {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* =========================================
+   WEDDING DETAILS
+========================================= */
+
+.wedding-details {
+  display: grid;
+
+  grid-template-columns:
+    0.8fr 1.2fr;
+
+  gap: 90px;
+
+  align-items: center;
+
+  margin-top: 100px;
+}
+
+/* Date card */
+
+.wedding-date-card {
+  padding: 45px 35px;
+
+  text-align: center;
+
+  border:
+    1px solid
+    rgba(217, 183, 122, 0.25);
+
+  background:
+    rgba(217, 183, 122, 0.035);
+
+  box-shadow:
+    0 20px 60px
+    rgba(0, 0, 0, 0.25);
+}
+
+.wedding-card-label {
+  display: block;
+
+  margin-bottom: 25px;
+
+  color: var(--gold);
+
+  font-size: 10px;
+
+  letter-spacing: 4px;
+}
+
+.wedding-date-card strong {
+  display: block;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(3rem, 6vw, 5rem);
+
+  font-weight: 500;
+
+  color: var(--cream);
+}
+
+.wedding-date-card strong small {
+  color: var(--rose);
+
+  font-size: 0.5em;
+}
+
+.date-decoration {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin: 20px 0;
+}
+
+.date-decoration span {
+  width: 45px;
+  height: 1px;
+
+  background: var(--gold);
+}
+
+.date-decoration svg {
+  color: var(--rose-light);
+}
+
+.wedding-date-card p {
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+/* Story */
+
+.wedding-story {
+  display: flex;
+
+  gap: 30px;
+}
+
+.wedding-story-line {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.story-dot {
+  width: 12px;
+  height: 12px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--rose-light);
+
+  box-shadow:
+    0 0 20px
+    rgba(244, 197, 210, 0.5);
+}
+
+.story-line {
+  width: 1px;
+
+  flex: 1;
+
+  margin-top: 10px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      var(--rose),
+      transparent
+    );
+}
+
+.wedding-story-content > span {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: var(--gold);
+
+  font-size: 10px;
+
+  letter-spacing: 3px;
+}
+
+.wedding-story-content h3 {
+  margin-bottom: 25px;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(3rem, 5vw, 4.5rem);
+
+  line-height: 0.9;
+
+  font-weight: 500;
+
+  color: var(--cream);
+}
+
+.wedding-story-content h3 em {
+  color: var(--rose-light);
+
+  font-weight: 400;
+}
+
+.wedding-story-content p {
+  max-width: 550px;
+
+  margin-bottom: 18px;
+
+  color: var(--muted);
+
+  font-size: 15px;
+
+  line-height: 1.9;
+}
+
+/* =========================================
+   MINI WEDDING GALLERY
+========================================= */
+
+.wedding-mini-gallery {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
+
+  margin-top: 110px;
+}
+
+.wedding-mini-card {
+  position: relative;
+
+  height: 360px;
+
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  border:
+    1px solid
+    rgba(244, 197, 210, 0.15);
+
+  transform:
+    rotate(-2deg);
+
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease;
+}
+
+.wedding-mini-card:nth-child(2) {
+  transform:
+    rotate(1deg);
+}
+
+.wedding-mini-card:nth-child(3) {
+  transform:
+    rotate(2deg);
+}
+
+.wedding-mini-card:hover {
+  z-index: 5;
+
+  transform:
+    translateY(-12px)
+    rotate(0deg)
+    scale(1.03);
+
+  box-shadow:
+    0 30px 70px
+    rgba(0, 0, 0, 0.5);
+}
+
+.wedding-mini-card img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s ease;
+}
+
+.wedding-mini-card:hover img {
+  transform: scale(1.08);
+}
+
+/* =========================================
+   FOREVER MESSAGE
+========================================= */
+
+.forever-message {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 25px;
+
+  margin-top: 110px;
+
+  text-align: center;
+
+  color: var(--rose-light);
+}
+
+.forever-message > div {
+  padding: 0 20px;
+}
+
+.forever-message span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--gold);
+
+  font-size: 9px;
+
+  letter-spacing: 4px;
+}
+
+/* =========================================
+   BIRTHDAY GIRL PHOTO GALLERY
+========================================= */
+
+.birthday-gallery-section {
+  position: relative;
+  padding: 150px 24px 130px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(217, 140, 165, 0.10),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(217, 183, 122, 0.08),
+      transparent 30%
+    ),
+    #090508;
+}
+
+.birthday-gallery-inner {
+  position: relative;
+  z-index: 2;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+/* Heading */
+
+.birthday-gallery-heading {
+  max-width: 700px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.birthday-gallery-label {
+  display: inline-block;
+  margin-bottom: 18px;
+
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 0.28em;
+  font-weight: 600;
+}
+
+.birthday-gallery-heading h2 {
+  margin: 0;
+
+  color: var(--cream);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 7vw, 82px);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.birthday-gallery-heading h2 span {
+  display: block;
+  color: var(--rose-light);
+  font-style: italic;
+}
+
+.birthday-gallery-heading p {
+  max-width: 500px;
+  margin: 28px auto 0;
+
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.birthday-photo-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  grid-auto-rows: 220px;
+
+  gap: 18px;
+}
+
+
+/* =========================================
+   PHOTO CARD
+========================================= */
+
+.birthday-photo-card {
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 220px;
+
+  border-radius: 24px;
+
+  background: #13090e;
+
+  border: 1px solid rgba(244, 197, 210, 0.10);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.30);
+
+  isolation: isolate;
+
+  transform: translateZ(0);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.birthday-photo-card img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(.2,.7,.2,1),
+    filter 0.6s ease;
+}
+
+
+/* Large */
+
+.birthday-photo-large {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+
+/* Tall */
+
+.birthday-photo-tall {
+  grid-row: span 2;
+}
+
+
+/* Wide */
+
+.birthday-photo-wide {
+  grid-column: span 2;
+}
+
+
+/* Hover */
+
+.birthday-photo-card:hover {
+  transform: translateY(-8px);
+
+  border-color:
+    rgba(244, 197, 210, 0.35);
+
+  box-shadow:
+    0 35px 80px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(217, 140, 165, 0.08);
+}
+
+.birthday-photo-card:hover img {
+  transform: scale(1.08);
+
+  filter:
+    brightness(0.82)
+    saturate(1.12);
+}
+
+
+/* =========================================
+   OVERLAY
+========================================= */
+
+.birthday-photo-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 50%,
+      rgba(0, 0, 0, 0.65)
+    );
+
+  opacity: 0;
+
+  transition: opacity 0.5s ease;
+
+  z-index: 1;
+}
+
+.birthday-photo-card:hover::after {
+  opacity: 1;
+}
+
+.birthday-photo-overlay {
+  position: absolute;
+
+  right: 18px;
+  bottom: 18px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--rose-light);
+
+  background: rgba(9, 5, 8, 0.55);
+
+  border: 1px solid rgba(244, 197, 210, 0.20);
+
+  backdrop-filter: blur(10px);
+
+  opacity: 0;
+
+  transform:
+    translateY(12px)
+    scale(0.8);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+  z-index: 3;
+}
+
+.birthday-photo-card:hover .birthday-photo-overlay {
+  opacity: 1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* =========================================
+   DECORATIVE GLOW
+========================================= */
+
+.birthday-gallery-glow {
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  opacity: 0.12;
+
+  animation: birthdayGlowMove 8s ease-in-out infinite alternate;
+}
+
+.birthday-glow-one {
+  top: 5%;
+  left: -180px;
+  background: var(--rose);
+}
+
+.birthday-glow-two {
+  right: -180px;
+  bottom: 5%;
+  background: var(--gold);
+
+  animation-delay: 2s;
+}
+
+@keyframes birthdayGlowMove {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(50px, -30px, 0) scale(1.2);
+  }
+}
+
+
+/* =========================================
+   BOTTOM MESSAGE
+========================================= */
+
+.birthday-gallery-bottom {
+  position: relative;
+
+  margin-top: 75px;
+
+  text-align: center;
+
+  color: var(--rose-light);
+}
+
+.birthday-gallery-bottom svg {
+  margin-bottom: 18px;
+
+  animation:
+    birthdayHeartPulse 2s ease-in-out infinite;
+}
+
+.birthday-gallery-bottom p {
+  margin: 0;
+
+  color: var(--cream);
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(25px, 4vw, 38px);
+
+  line-height: 1.25;
+
+  font-style: italic;
+}
+
+.birthday-gallery-bottom span {
+  display: block;
+
+  margin-top: 18px;
+
+  color: var(--gold);
+
+  font-size: 11px;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+}
+
+@keyframes birthdayHeartPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .birthday-gallery-section {
+    padding: 110px 18px 100px;
+  }
+
+  .birthday-photo-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    grid-auto-rows: 240px;
+
+    gap: 14px;
+  }
+
+  .birthday-photo-large {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .birthday-photo-tall {
+    grid-row: span 1;
+  }
+
+  .birthday-photo-wide {
+    grid-column: span 2;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .birthday-gallery-section {
+    padding: 90px 14px 80px;
+  }
+
+  .birthday-gallery-heading {
+    margin-bottom: 45px;
+  }
+
+  .birthday-gallery-heading h2 {
+    font-size: 50px;
+  }
+
+  .birthday-gallery-heading p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .birthday-photo-grid {
+    grid-template-columns: 1fr;
+
+    grid-auto-rows: auto;
+
+    gap: 12px;
+  }
+
+  .birthday-photo-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 220px;
+    border-radius: 24px;
+  
+    background: #0d070a;
+  
+    border: 1px solid rgba(244, 197, 210, 0.12);
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .birthday-photo-card img {
+    width: 100%;
+    height: 100%;
+  
+    display: block;
+  
+    /* Shows the complete image */
+    object-fit: contain;
+  
+    /* Prevents stretching */
+    object-position: center;
+  
+    transition:
+      transform 0.8s cubic-bezier(.2, .7, .2, 1),
+      filter 0.6s ease;
+  }
+  
+  .birthday-photo-card:hover img {
+    transform: scale(1.04);
+    filter: brightness(0.9) saturate(1.08);
+  }
+  .birthday-photo-card,
+  .birthday-photo-large,
+  .birthday-photo-tall,
+  .birthday-photo-wide {
+    grid-column: auto;
+    grid-row: auto;
+
+    height: 340px;
+    min-height: 340px;
+
+    border-radius: 20px;
+  }
+
+  .birthday-photo-large {
+    height: 440px;
+  }
+
+  .birthday-photo-wide {
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .birthday-photo-overlay {
+    opacity: 1;
+
+    transform: none;
+
+    width: 38px;
+    height: 38px;
+
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .birthday-gallery-bottom {
+    margin-top: 55px;
+  }
+
+  .birthday-gallery-bottom p {
+    font-size: 27px;
+  }
+
+  .birthday-gallery-bottom span {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+  }
+}
+
+.forever-message h3 {
+  margin: 0;
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size:
+    clamp(2.3rem, 5vw, 4rem);
+
+  font-weight: 400;
+
+  color: var(--cream);
+}
+
+.forever-message h3 em {
+  color: var(--rose-light);
+
+  font-style: italic;
+}
+/* Bottom */
+
+.outings-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  margin-top: 70px;
+
+  color: var(--rose-light);
+
+  font-family:
+    "Cormorant Garamond",
+    serif;
+
+  font-size: 20px;
+
+  font-style: italic;
+}
+.engagement-promise {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  margin-top: 100px;
+
+  color: var(--gold);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-style: italic;
+}
+
+.memory-item:hover .memory-overlay {
+  opacity: 1;
+  background: rgba(10, 4, 8, 0.35);
+}
+
+.memory-overlay svg {
+  filter:
+    drop-shadow(0 0 12px rgba(244, 197, 210, 0.8));
+  animation: memoryHeart 1.5s ease-in-out infinite;
+}
+
+@keyframes memoryHeart {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+}
+/* =========================
+   FOOTER
+========================= */
+
+
+
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  padding: 40px 20px;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 12px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+footer svg {
+  color: var(--rose);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .opening-content h1 {
+    font-size: 62px;
+  }
+
+  .tiny-label {
+    font-size: 8px;
+    letter-spacing: 3px;
+  }
+
+  .opening-content p {
+    font-size: 14px;
+  }
+
+  .letter-card {
+    padding: 40px 25px;
+  }
+
+  .letter-card p {
+    font-size: 20px;
+  }
+
+  .story-content h2 {
+    font-size: 65px;
+  }
+
+  footer {
+    font-size: 10px;
+  }
+}
